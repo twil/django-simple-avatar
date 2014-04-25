@@ -1,9 +1,9 @@
 import urllib
+from hashcompat import md5_constructor
 
 from django import template
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext as _
-from django.utils.hashcompat import md5_constructor
 
 from simpleavatar.settings import AVATAR_DEFAULT_URL, AVATAR_GRAVATAR_BACKUP, AVATAR_GRAVATAR_DEFAULT
 from simpleavatar.models import avatar_thumbnail_exists, avatar_thumbnail_url
