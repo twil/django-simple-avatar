@@ -1,5 +1,6 @@
 import urllib
-from hashcompat import md5_constructor
+from hashlib import md5
+
 
 from django import template
 from django.contrib.auth.models import User
@@ -23,7 +24,7 @@ def avatar_url(user, size=80):
             if AVATAR_GRAVATAR_DEFAULT:
                 params['d'] = AVATAR_GRAVATAR_DEFAULT
             return "http://www.gravatar.com/avatar/%s/?%s" % (
-                md5_constructor(user.email).hexdigest(),
+                md5(user.email).hexdigest(),
                 urllib.urlencode(params))
         else:
             return AVATAR_DEFAULT_URL
